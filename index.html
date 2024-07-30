@@ -23,20 +23,22 @@
     </header>
     <main>
       <div class="weather-app-data">
-      <div>
-        <h1  class="weather-app-city" id="city">Paris </h1>
-        <p class="weather-app-details">Tuesday 20:32 <span id="description"></span>,scattered clouds
-          <br />
-          Humidity:<strong>66%</strong>,Wind:<strong>3.13 km/h</strong>
-        </p>
+        <div>
+          <h1 class="weather-app-city" id="city"></h1>
+          <p class="weather-app-details">
+            Tuesday  <span id="time"></span> <span id="description"></span><br />
+            Humidity: <strong id="humid"></strong>, Wind: <strong id="speed"></strong>
+          </p>
+        </div>
+        <div class="weather-app-temperature-container">
+         
+            <img class="weather-app-icon"id="icon"/>
+          
+          <div class="weather-app-temperature" id="temperature"></div>
+          <div class="weather-app-unit">°C</div>
+        </div>
       </div>
-      <div class="weather-app-temperature-container">
-        <div class="weather-app-icon">🌤️</div>
-         <div class="weather-app-temperature">20 </div>
-       <div class=" weather-app-unit">°C </div>
-      </div>
-      
-  </main>
+    </main>
   <footer>
     <p>
       This project was coded by
