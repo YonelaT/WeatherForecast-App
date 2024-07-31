@@ -7,17 +7,7 @@ function updateWeather(response) {
         let humidElement = document.querySelector("#humid");
         let time = document.querySelector("#time");
         let icon = document.querySelector("#icon")
-            
-        console.log("==================Yonela========================");
-        console.log(response);
-        console.log(
-            "City:" + response.data.city +
-            "\nTemp:" + response.data.temperature.current +
-            "\nDescription:" + response.data.condition.description +
-            "\nHumidity:" + response.data.temperature.humidity +
-            "\nWind:" + response.data.wind.speed +
-            "\nTime:" + response.data.time
-        );
+
 
         const unixTimestamp = response.data.time;
         const date = new Date(unixTimestamp * 1000);
@@ -25,11 +15,22 @@ function updateWeather(response) {
         const minutes = date.getMinutes().toString().padStart(2, '0');
         const formattedTime = `${hours}:${minutes}`;
 
+        console.log(
+            "City:" + response.data.city +
+            "\nTemp:" + response.data.temperature.current +
+            "\nDescription:" + response.data.condition.description +
+            "\nHumidity:" + response.data.temperature.humidity +
+            "\nWind:" + response.data.wind.speed +
+            "\nTime:" + formattedTime
+        );
+
+
+
         descriptionElement.innerHTML = response.data.condition.description;
         temperatureElement.innerHTML = Math.round(response.data.temperature.current);
         cityElement.innerHTML = response.data.city;
-        time.innerHTML= formattedTime;
-        icon.src = response.data.condition.icon_url; 
+        time.innerHTML = formattedTime;
+        icon.src = response.data.condition.icon_url;
         windElement.innerHTML = `${response.data.wind.speed} km/h`;
         humidElement.innerHTML = `${response.data.temperature.humidity}%`;
 
